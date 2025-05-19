@@ -1,1 +1,90 @@
-# starlivie
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>mi pagina de verano</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      /* Cambia la URL de la imagen a tu fondo deseado */
+      background-image: url('https://images.alphacoders.com/116/1166921.jpg');
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    .container {
+      background: rgba(0,0,0,0.5);
+      padding: 40px 30px;
+      border-radius: 20px;
+      display: inline-block;
+      margin-top: 10vh;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    }
+    input[type="text"] {
+      padding: 8px;
+      border-radius: 5px;
+      border: none;
+      margin-right: 8px;
+    }
+    button {
+      padding: 8px 16px;
+      border-radius: 5px;
+      border: none;
+      background: #3fc1c9;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    button:hover {
+      background: #2fa1a8;
+    }
+    .counter {
+      margin-top: 30px;
+      font-size: 1.3em;
+      background: rgba(0,0,0,0.3);
+      padding: 8px 0;
+      border-radius: 10px;
+      display: inline-block;
+      min-width: 180px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Página Simple</h1>
+    <form id="redirectForm" onsubmit="redirigir(event)">
+      <input type="text" id="urlDestino" placeholder="Ingresa la URL a visitar" required />
+      <button type="submit">Ir a la página</button>
+    </form>
+    <div class="counter">
+      <span id="contador"></span>
+    </div>
+  </div>
+  <script>
+    // Simple contador usando localStorage (no es global, solo cuenta en este navegador)
+    // Si quieres algo global necesitas backend.
+    function incrementarContador() {
+      let visitas = localStorage.getItem('contador_visitas');
+      if (!visitas) visitas = 0;
+      visitas = parseInt(visitas, 10) + 1;
+      localStorage.setItem('contador_visitas', visitas);
+      document.getElementById('contador').innerText = 'Visitas en este navegador: ' + visitas;
+    }
+    function redirigir(event) {
+      event.preventDefault();
+      let url = document.getElementById('urlDestino').value;
+      if (!/^https?:\/\//i.test(url)) {
+        url = 'http://' + url;
+      }
+      window.location.href = url;
+    }
+    window.onload = incrementarContador;
+  </script>
+</body>
+</html>
