@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Página con fondo, botón y contador</title>
+  <style>
+    body {
+      background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb'); /* Cambia la URL por la que desees */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 100vh;
+      margin: 0;
+      color: white;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+    .contenido {
+      background: rgba(0,0,0,0.5);
+      padding: 40px 20px;
+      border-radius: 20px;
+      display: inline-block;
+      margin-top: 15%;
+    }
+    button {
+      padding: 15px 40px;
+      border: none;
+      border-radius: 10px;
+      background-color: #00aaff;
+      color: #fff;
+      font-size: 1.2em;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    #contador {
+      font-size: 1.5em;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="contenido">
+    <h1>Bienvenido a mi página</h1>
+    <button onclick="window.location.href='https://blusummerr.github.io/webpage/';">Ir a otra página</button>
+    <div id="contador"></div>
+  </div>
+  <script>
+    // Contador de visitas usando LocalStorage (solo cuenta en el navegador local)
+    let visitas = localStorage.getItem('contadorVisitas');
+    if (visitas === null) {
+      visitas = 1;
+    } else {
+      visitas = parseInt(visitas) + 1;
+    }
+    localStorage.setItem('contadorVisitas', visitas);
+    document.getElementById('contador').textContent = 'Contador de visitas: ' + visitas;
+  </script>
+</body>
+</html>
