@@ -5,14 +5,14 @@
   <title>Página con fondo, botón y contador</title>
   <style>
     body {
-      background-image: url('https://images.alphacoders.com/116/1166921.jpg'); /* Cambia la URL por la que desees */
+      background-image: url('https://images.alphacoders.com/116/1166921.jpg');
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
       height: 100vh;
       margin: 0;
       color: white;
-      text-align: down;
+      text-align: center; /* Corregido */
       font-family: Arial, sans-serif;
     }
     .contenido {
@@ -39,16 +39,16 @@
   </style>
 </head>
 <body>
+  <audio autoplay loop>
+    <!-- Cambia la ruta a tu archivo MP3 si está en otra carpeta -->
+    <source src="assets/musica.mp3" type="audio/mpeg">
+    Tu navegador no soporta el elemento de audio.
+  </audio>
   <div class="contenido">
     <h1>Bienvenido a mi página</h1>
     <button onclick="window.location.href='https://blusummerr.github.io/webpage/';">Ir a otra página</button>
     <div id="contador"></div>
   </div>
-
-</audio>
-  <audio autoplay loop>
-  <source src="https://youtu.be/8HH2P-GgPSE?feature=shared" type="audio/mpeg">
-</audio>
   <script>
     // Contador de visitas usando LocalStorage (solo cuenta en el navegador local)
     let visitas = localStorage.getItem('contadorVisitas');
