@@ -45,6 +45,17 @@
     <button onclick="window.location.href='https://blusummerr.github.io/webpage/';">Ir a otra página</button>
     <div id="contador"></div>
   </div>
+
+<video id="miVideo" width="480" controls autoplay>
+  <source src="Video (1).mov" type="video/quicktime">
+  Tu navegador no soporta el video.
+</video>
+<br>
+<button onclick="document.getElementById('miVideo').scrollIntoView({behavior: 'smooth'});">
+  Ir al video
+</button>
+
+  
   <script>
     // Contador de visitas usando LocalStorage (solo cuenta en el navegador local)
     let visitas = localStorage.getItem('contadorVisitas');
