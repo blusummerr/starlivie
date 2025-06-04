@@ -46,15 +46,15 @@
     <div id="contador"></div>
   </div>
 
-<video id="Video (1).mov" width="480" controls autoplay>
-  <source src="Video (1).mov" type="Video (1).mov">
+<!-- Video visible en la página -->
+<video id="miVideo" width="480" controls>
+  <source src="Video (1).mov" type="video/mp4">
   Tu navegador no soporta el video.
 </video>
 <br>
 <button onclick="document.getElementById('miVideo').scrollIntoView({behavior: 'smooth'});">
   Ir al video
 </button>
-
   
   <script>
     // Contador de visitas usando LocalStorage (solo cuenta en el navegador local)
